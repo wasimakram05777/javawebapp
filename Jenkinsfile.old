@@ -8,7 +8,7 @@ pipeline {
 
     environment {
 
-        EMAIL_RECIPIENTS = 'akshay.kg@bt.com'
+        EMAIL_RECIPIENTS = 'wasim'
 
     }
     
@@ -95,7 +95,7 @@ pipeline {
         post('Send Email') {
         failure {
             script {
-                mail (to: 'wasim.3.akram@bt.com',
+                mail (to: 'wasimakram',
                         subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) failed",
                         body: "Please visit ${env.BUILD_URL} for further information"
                 );
@@ -103,7 +103,7 @@ pipeline {
             }
          success {
              script {
-                mail (to: 'wasim.3.akram@bt.com', 
+                mail (to: 'wasimakram', 
                         subject: "Job '${env.JOB_NAME}' (${env.BUILD_NUMBER}) success.",
                         body: "Please visit ${env.BUILD_URL} for further information.",
 
